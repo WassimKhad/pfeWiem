@@ -121,7 +121,7 @@ const ImageSection = styled.div`
 const HeroImage = styled.div`
   width: 90%;
   height: 80vh;
-  background: url("./images/hero-doctor.png") center center;
+  background: url("/images/hero-doctor.png") center center;
   background-size: cover;
   border-radius: 20px;
   position: relative;
