@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
+import type { IconBaseProps } from "react-icons/lib";
 import { FaChevronDown } from "react-icons/fa";
 
 const FAQContainer = styled.div`
@@ -47,13 +48,17 @@ const Answer = styled(motion.div)`
   line-height: 1.8;
 `;
 
+const IconComponent = ({ icon: Icon }: { icon: React.ComponentType<IconBaseProps> }) => (
+  <Icon />
+);
+
 const faqData = [
   {
     question: "Que faire si je suspecte une violence sans preuve visible ?",
     answer:
       "Restez vigilant, documentez tout, et orientez vers des structures spécialisées.",
   },
-    {
+  {
     question: "Comment reconnaître les signes de violence ?",
     answer:
       "Les signes peuvent être physiques (blessures, douleurs), psychologiques (anxiété, dépression), ou comportementaux (isolement, changements d'humeur). Notre équipe est formée pour identifier ces signes et apporter une aide adaptée.",
@@ -76,7 +81,7 @@ const faqData = [
 ];
 
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <FAQContainer>
@@ -87,7 +92,7 @@ const FAQ = () => {
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
           >
             {faq.question}
-            <FaChevronDown />
+            <IconComponent icon={FaChevronDown as React.ComponentType<IconBaseProps>} />
           </Question>
           <AnimatePresence>
             {openIndex === index && (

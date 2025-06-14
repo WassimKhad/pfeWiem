@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import type { IconBaseProps } from "react-icons/lib";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const FooterContainer = styled.footer`
@@ -43,6 +44,10 @@ const Copyright = styled.div`
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 `;
 
+const IconComponent = ({ icon: Icon }: { icon: React.ComponentType<IconBaseProps> }) => (
+  <Icon />
+);
+
 const Footer = () => {
   return (
     <FooterContainer>
@@ -59,15 +64,15 @@ const Footer = () => {
         <FooterSection>
           <h3>Contacts d'urgence</h3>
           <ContactInfo>
-            <FaPhone />
+            <IconComponent icon={FaPhone as React.ComponentType<IconBaseProps>} />
             <span>3919 (Violences Femmes Info)</span>
           </ContactInfo>
           <ContactInfo>
-            <FaPhone />
+            <IconComponent icon={FaPhone as React.ComponentType<IconBaseProps>} />
             <span>119 (Enfance en danger)</span>
           </ContactInfo>
           <ContactInfo>
-            <FaPhone />
+            <IconComponent icon={FaPhone as React.ComponentType<IconBaseProps>} />
             <span>17 (Police Secours)</span>
           </ContactInfo>
         </FooterSection>
@@ -75,11 +80,11 @@ const Footer = () => {
         <FooterSection>
           <h3>Nous contacter</h3>
           <ContactInfo>
-            <FaEnvelope />
+            <IconComponent icon={FaEnvelope as React.ComponentType<IconBaseProps>} />
             <span>contact@paramed-care.fr</span>
           </ContactInfo>
           <ContactInfo>
-            <FaMapMarkerAlt />
+            <IconComponent icon={FaMapMarkerAlt as React.ComponentType<IconBaseProps>} />
             <span>Paris, France</span>
           </ContactInfo>
         </FooterSection>

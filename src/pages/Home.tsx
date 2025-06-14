@@ -1,17 +1,27 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import Hero from "../components/Hero";
+import { FaUserMd, FaHospital, FaHandHoldingHeart, FaChartLine } from "react-icons/fa";
 import Testimonial from "../components/Testimonial";
 import Services from "../components/Services";
 import FAQ from "../components/FAQ";
 import ClinicAbout from "../components/ClinicAbout";
-import {
-  FaUserMd,
-  FaHospital,
-  FaHandHoldingHeart,
-  FaChartLine,
-} from "react-icons/fa";
+import StatCard from "../components/StatCard";
+import Hero from "../components/Hero";
+
+const StatsSection = styled.section`
+  padding: 80px 32px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #1a237e 100%);
+  color: white;
+`;
+
+const StatsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+`;
 
 const FeaturesSection = styled.section`
   padding: 5rem 2rem;
@@ -45,41 +55,6 @@ const TestimonialsGrid = styled.div`
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-`;
-
-const StatsSection = styled.section`
-  padding: 5rem 2rem;
-  background: linear-gradient(135deg, var(--primary-color) 0%, #1a237e 100%);
-  color: white;
-`;
-
-const StatsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-`;
-
-const StatCard = styled(motion.div)`
-  padding: 2rem;
-
-  svg {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: var(--accent-color);
-  }
-
-  h3 {
-    font-size: 2.5rem;
-    margin: 1rem 0;
-  }
-
-  p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-  }
 `;
 
 const AboutSection = styled.section`
@@ -158,6 +133,35 @@ const Home = () => {
         onPlayVideo={handlePlayVideo}
       />
 
+      <StatsSection>
+        <StatsGrid>
+          <StatCard
+            icon={FaUserMd}
+            value="24/7"
+            label="Disponibilité"
+            delay={0}
+          />
+          <StatCard
+            icon={FaHospital}
+            value="50+"
+            label="Centres Partenaires"
+            delay={0.2}
+          />
+          <StatCard
+            icon={FaHandHoldingHeart}
+            value="1000+"
+            label="Personnes Accompagnées"
+            delay={0.4}
+          />
+          <StatCard
+            icon={FaChartLine}
+            value="95%"
+            label="Taux de Satisfaction"
+            delay={0.6}
+          />
+        </StatsGrid>
+      </StatsSection>
+
       <ServicesSection>
         <SectionTitle>Nos Services</SectionTitle>
         <SectionSubtitle>
@@ -166,47 +170,6 @@ const Home = () => {
         </SectionSubtitle>
         <Services />
       </ServicesSection>
-
-      <StatsSection>
-        <StatsGrid>
-          <StatCard
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <FaUserMd />
-            <h3>24/7</h3>
-            <p>Disponibilité</p>
-          </StatCard>
-          <StatCard
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <FaHospital />
-            <h3>50+</h3>
-            <p>Centres Partenaires</p>
-          </StatCard>
-          <StatCard
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <FaHandHoldingHeart />
-            <h3>1000+</h3>
-            <p>Personnes Accompagnées</p>
-          </StatCard>
-          <StatCard
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            <FaChartLine />
-            <h3>95%</h3>
-            <p>Taux de Satisfaction</p>
-          </StatCard>
-        </StatsGrid>
-      </StatsSection>
 
       <TestimonialsSection>
         <SectionTitle>Notre Équipe</SectionTitle>

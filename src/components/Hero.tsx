@@ -1,7 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { FaFacebookF, FaTwitter, FaInstagram, FaGoogle, FaPlay } from "react-icons/fa";
+import type { IconBaseProps } from "react-icons/lib";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaGoogle,
+  FaPlay,
+} from "react-icons/fa";
 
 const HeroLayout = styled.section`
   position: relative;
@@ -168,6 +175,10 @@ const SocialIcon = styled.a`
   }
 `;
 
+const IconComponent = ({ icon: Icon }: { icon: React.ComponentType<IconBaseProps> }) => (
+  <Icon />
+);
+
 const Hero = () => {
   return (
     <HeroLayout>
@@ -178,18 +189,17 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
         >
           <Tagline>Nous sommes là pour vous</Tagline>
-          <Title>
-            Ce qui nous rend meilleurs vous rend meilleurs
-          </Title>
+          <Title>Ce qui nous rend meilleurs vous rend meilleurs</Title>
           <Description>
-            En tant que professionnels paramédicaux, notre engagement est d'accompagner 
-            et de soutenir les victimes de violence avec bienveillance et expertise.
-            Notre approche personnalisée garantit un accompagnement optimal.
+            En tant que professionnels paramédicaux, notre engagement est
+            d'accompagner et de soutenir les victimes de violence avec
+            bienveillance et expertise. Notre approche personnalisée garantit un
+            accompagnement optimal.
           </Description>
           <ButtonGroup>
             <PrimaryButton>Prendre Rendez-vous</PrimaryButton>
             <PlayButton>
-              <FaPlay />
+              <IconComponent icon={FaPlay as React.ComponentType<IconBaseProps>} />
             </PlayButton>
           </ButtonGroup>
         </motion.div>
@@ -197,17 +207,17 @@ const Hero = () => {
       <ImageSection>
         <HeroImage />
         <SocialLinks>
-          <SocialIcon href="#" target="_blank">
-            <FaFacebookF />
+          <SocialIcon href="#">
+            <IconComponent icon={FaFacebookF as React.ComponentType<IconBaseProps>} />
           </SocialIcon>
-          <SocialIcon href="#" target="_blank">
-            <FaTwitter />
+          <SocialIcon href="#">
+            <IconComponent icon={FaTwitter as React.ComponentType<IconBaseProps>} />
           </SocialIcon>
-          <SocialIcon href="#" target="_blank">
-            <FaInstagram />
+          <SocialIcon href="#">
+            <IconComponent icon={FaInstagram as React.ComponentType<IconBaseProps>} />
           </SocialIcon>
-          <SocialIcon href="#" target="_blank">
-            <FaGoogle />
+          <SocialIcon href="#">
+            <IconComponent icon={FaGoogle as React.ComponentType<IconBaseProps>} />
           </SocialIcon>
         </SocialLinks>
       </ImageSection>

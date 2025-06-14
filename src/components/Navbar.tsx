@@ -89,9 +89,6 @@ const Navbar = () => {
   return (
     <Nav>
       <Logo to="/">ParaMed Care</Logo>
-      <MobileIcon onClick={toggle}>
-        {isOpen ? <FaTimes /> : <FaBars />}
-      </MobileIcon>
       <NavMenu isOpen={isOpen}>
         <NavLink to="/">Accueil</NavLink>
         <NavLink to="/about">À Propos</NavLink>

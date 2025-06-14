@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import type { IconBaseProps } from "react-icons/lib";
 import { FaPlay } from "react-icons/fa";
 
 const ClinicSection = styled.section`
@@ -111,6 +112,10 @@ interface ClinicAboutProps {
   onPlayVideo: () => void;
 }
 
+const IconComponent = ({ icon: Icon }: { icon: React.ComponentType<IconBaseProps> }) => (
+  <Icon />
+);
+
 const ClinicAbout: React.FC<ClinicAboutProps> = ({
   videoThumbnail,
   onPlayVideo,
@@ -125,7 +130,7 @@ const ClinicAbout: React.FC<ClinicAboutProps> = ({
             whileTap={{ scale: 0.9 }}
             onClick={onPlayVideo}
           >
-            <FaPlay />
+            <IconComponent icon={FaPlay as React.ComponentType<IconBaseProps>} />
           </PlayButton>
         </VideoContainer>
         <Content>
