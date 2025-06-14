@@ -98,7 +98,7 @@ const Home = () => {
       <Hero />
 
       <ClinicAbout
-        videoThumbnail="./images/hero-doctor.png"
+        videoThumbnail="/images/hero-doctor.png"
         onPlayVideo={handlePlayVideo}
       />
 
@@ -148,18 +148,18 @@ const Home = () => {
         </SectionSubtitle>
         <TestimonialsGrid>
           <Testimonial
-            avatar="./images/hero-doctor.png"
+            avatar="/images/hero-doctor.png"
             quote="Spécialisée dans la prise en charge des victimes de violence, je m'engage à fournir un accompagnement bienveillant et professionnel pour aider chaque personne à retrouver confiance et sérénité."
             name="Wiem KHADRAOUI"
             role="Infirmière Spécialisée"
             rating={5}
           />
           <Testimonial
-            avatar="/wiem.png"
+            avatar="/images/hero-doctor.png"
             quote="Mon rôle est d'assurer un suivi psychologique adapté et de coordonner avec les différents acteurs de santé pour une prise en charge optimale des victimes."
             name="Thomas Dubois"
             role="Psychologue Clinicien"
-            rating={5}
+            rating={4}
           />
         </TestimonialsGrid>
       </TestimonialsSection>
