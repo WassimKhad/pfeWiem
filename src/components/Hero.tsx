@@ -121,7 +121,7 @@ const ImageSection = styled.div`
 const HeroImage = styled.div`
   width: 90%;
   height: 80vh;
-  background: url("/images/hero-doctor.png") center center;
+  background: url("./images/hero-doctor.png") center center;
   background-size: cover;
   border-radius: 20px;
   position: relative;
@@ -175,9 +175,11 @@ const SocialIcon = styled.a`
   }
 `;
 
-const IconComponent = ({ icon: Icon }: { icon: React.ComponentType<IconBaseProps> }) => (
-  <Icon />
-);
+const IconComponent = ({
+  icon: Icon,
+}: {
+  icon: React.ComponentType<IconBaseProps>;
+}) => <Icon />;
 
 const Hero = () => {
   return (
@@ -199,7 +201,9 @@ const Hero = () => {
           <ButtonGroup>
             <PrimaryButton>Prendre Rendez-vous</PrimaryButton>
             <PlayButton>
-              <IconComponent icon={FaPlay as React.ComponentType<IconBaseProps>} />
+              <IconComponent
+                icon={FaPlay as React.ComponentType<IconBaseProps>}
+              />
             </PlayButton>
           </ButtonGroup>
         </motion.div>
@@ -208,16 +212,24 @@ const Hero = () => {
         <HeroImage />
         <SocialLinks>
           <SocialIcon href="#">
-            <IconComponent icon={FaFacebookF as React.ComponentType<IconBaseProps>} />
+            <IconComponent
+              icon={FaFacebookF as React.ComponentType<IconBaseProps>}
+            />
           </SocialIcon>
           <SocialIcon href="#">
-            <IconComponent icon={FaTwitter as React.ComponentType<IconBaseProps>} />
+            <IconComponent
+              icon={FaTwitter as React.ComponentType<IconBaseProps>}
+            />
           </SocialIcon>
           <SocialIcon href="#">
-            <IconComponent icon={FaInstagram as React.ComponentType<IconBaseProps>} />
+            <IconComponent
+              icon={FaInstagram as React.ComponentType<IconBaseProps>}
+            />
           </SocialIcon>
           <SocialIcon href="#">
-            <IconComponent icon={FaGoogle as React.ComponentType<IconBaseProps>} />
+            <IconComponent
+              icon={FaGoogle as React.ComponentType<IconBaseProps>}
+            />
           </SocialIcon>
         </SocialLinks>
       </ImageSection>
