@@ -1,7 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { FaUserMd, FaHospital, FaHandHoldingHeart, FaChartLine } from "react-icons/fa";
+import {
+  FaUserMd,
+  FaHospital,
+  FaHandHoldingHeart,
+  FaChartLine,
+} from "react-icons/fa";
 import Testimonial from "../components/Testimonial";
 import Services from "../components/Services";
 import FAQ from "../components/FAQ";
@@ -55,42 +60,6 @@ const TestimonialsGrid = styled.div`
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-`;
-
-const AboutSection = styled.section`
-  padding: 5rem 2rem;
-  background-color: var(--secondary-color);
-`;
-
-const AboutContainer = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const AboutImage = styled.img`
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-`;
-
-const AboutContent = styled.div`
-  h2 {
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-  }
-
-  p {
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
-  }
 `;
 
 const ServicesSection = styled.section`

@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Nav = styled.nav`
   background-color: var(--background-color);
@@ -66,30 +64,15 @@ const NavLink = styled(Link)`
   }
 `;
 
-const MobileIcon = styled.div`
-  display: none;
 
-  @media screen and (max-width: 768px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 1.8rem;
-    cursor: pointer;
-    color: var(--text-color);
-  }
-`;
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen);
 
   return (
     <Nav>
       <Logo to="/">ParaMed Care</Logo>
-      <NavMenu isOpen={isOpen}>
+      <NavMenu isOpen={false}>
         <NavLink to="/">Accueil</NavLink>
         <NavLink to="/about">À Propos</NavLink>
         <NavLink to="/services">Services</NavLink>
