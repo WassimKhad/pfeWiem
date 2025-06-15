@@ -65,7 +65,7 @@ const Footer = () => {
           <h3>Contacts d'urgence</h3>
           <ContactInfo>
             <IconComponent icon={FaPhone as React.ComponentType<IconBaseProps>} />
-            <span>3919 (Violences Femmes Info)</span>
+            <span>1899 (Violences Femmes Info)</span>
           </ContactInfo>
           <ContactInfo>
             <IconComponent icon={FaPhone as React.ComponentType<IconBaseProps>} />
@@ -73,7 +73,7 @@ const Footer = () => {
           </ContactInfo>
           <ContactInfo>
             <IconComponent icon={FaPhone as React.ComponentType<IconBaseProps>} />
-            <span>17 (Police Secours)</span>
+            <span>197 (Police Secours)</span>
           </ContactInfo>
         </FooterSection>
 
@@ -85,7 +85,7 @@ const Footer = () => {
           </ContactInfo>
           <ContactInfo>
             <IconComponent icon={FaMapMarkerAlt as React.ComponentType<IconBaseProps>} />
-            <span>Paris, France</span>
+            <span>Tunis, Tunisie</span>
           </ContactInfo>
         </FooterSection>
       </FooterContent>

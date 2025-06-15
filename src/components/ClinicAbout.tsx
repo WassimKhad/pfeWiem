@@ -107,14 +107,39 @@ const StatBox = styled(motion.div)`
   }
 `;
 
+const BulletList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+`;
+
+const BulletPoint = styled.li`
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1.2rem;
+  color: #666;
+  line-height: 1.2;
+
+  &::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+`;
+
 interface ClinicAboutProps {
   videoThumbnail: string;
   onPlayVideo: () => void;
 }
 
-const IconComponent = ({ icon: Icon }: { icon: React.ComponentType<IconBaseProps> }) => (
-  <Icon />
-);
+const IconComponent = ({
+  icon: Icon,
+}: {
+  icon: React.ComponentType<IconBaseProps>;
+}) => <Icon />;
 
 const ClinicAbout: React.FC<ClinicAboutProps> = ({
   videoThumbnail,
@@ -130,7 +155,9 @@ const ClinicAbout: React.FC<ClinicAboutProps> = ({
             whileTap={{ scale: 0.9 }}
             onClick={onPlayVideo}
           >
-            <IconComponent icon={FaPlay as React.ComponentType<IconBaseProps>} />
+            <IconComponent
+              icon={FaPlay as React.ComponentType<IconBaseProps>}
+            />
           </PlayButton>
         </VideoContainer>
         <Content>
@@ -147,10 +174,25 @@ const ClinicAbout: React.FC<ClinicAboutProps> = ({
               psychologique et accompagnement social.
             </p>
             <p>
-              Notre équipe pluridisciplinaire travaille en étroite collaboration
-              pour assurer une prise en charge optimale et personnalisée pour
-              chaque personne que nous accompagnons.
+              En tant que professionnel paramédical, plusieurs actions doivent
+              être réalisées :
             </p>
+            <BulletList>
+              <BulletPoint>Prioriser la sécurité de la patiente.</BulletPoint>
+              <BulletPoint>
+                Accueillir avec bienveillance, sans jugement.
+              </BulletPoint>
+              <BulletPoint>
+                Observer et repérer les signes cliniques ou comportementaux.
+              </BulletPoint>
+              <BulletPoint>
+                Alerter l’équipe médicale pour une prise en charge adaptée.
+              </BulletPoint>
+              <BulletPoint>
+                Respecter la confidentialité et la volonté de la patiente.
+              </BulletPoint>
+            </BulletList>
+
             <ReadMore href="#about">En savoir plus</ReadMore>
             <Stats>
               <StatBox

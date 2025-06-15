@@ -1,11 +1,9 @@
-import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import {
   FaUserMd,
   FaHospital,
   FaHandHoldingHeart,
-  FaChartLine,
 } from "react-icons/fa";
 import Testimonial from "../components/Testimonial";
 import Services from "../components/Services";
@@ -13,6 +11,7 @@ import FAQ from "../components/FAQ";
 import ClinicAbout from "../components/ClinicAbout";
 import StatCard from "../components/StatCard";
 import Hero from "../components/Hero";
+import TechSection from "../components/TechSection";
 
 const StatsSection = styled.section`
   padding: 80px 32px;
@@ -89,9 +88,9 @@ const SectionSubtitle = styled.p`
 
 const Home = () => {
   const handlePlayVideo = () => {
-    // Implémenter la logique de lecture vidéo ici
     console.log("Play video clicked");
   };
+
 
   return (
     <>
@@ -101,6 +100,8 @@ const Home = () => {
         videoThumbnail="/images/hero-doctor.png"
         onPlayVideo={handlePlayVideo}
       />
+
+      <TechSection />
 
       <StatsSection>
         <StatsGrid>
@@ -122,12 +123,7 @@ const Home = () => {
             label="Personnes Accompagnées"
             delay={0.4}
           />
-          <StatCard
-            icon={FaChartLine}
-            value="95%"
-            label="Taux de Satisfaction"
-            delay={0.6}
-          />
+  
         </StatsGrid>
       </StatsSection>
 
@@ -156,9 +152,9 @@ const Home = () => {
           />
           <Testimonial
             avatar="/images/hero-doctor.png"
-            quote="Mon rôle est d'assurer un suivi psychologique adapté et de coordonner avec les différents acteurs de santé pour une prise en charge optimale des victimes."
-            name="Thomas Dubois"
-            role="Psychologue Clinicien"
+            quote="Je suis un professionnel de santé formé et spécialisé dans l’accueil, l’écoute et le soin des femmes ayant subi des violences. Mon rôle est d’assurer une prise en charge globale et adaptée aux besoins de chaque patiente, en garantissant un accompagnement médical, psychologique et social."
+            name="Mohamed Amine Ghalmi"
+            role="Infirmière Spécialisée"
             rating={4}
           />
         </TestimonialsGrid>
