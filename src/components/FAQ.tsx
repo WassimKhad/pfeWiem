@@ -48,9 +48,11 @@ const Answer = styled(motion.div)`
   line-height: 1.8;
 `;
 
-const IconComponent = ({ icon: Icon }: { icon: React.ComponentType<IconBaseProps> }) => (
-  <Icon />
-);
+const IconComponent = ({
+  icon: Icon,
+}: {
+  icon: React.ComponentType<IconBaseProps>;
+}) => <Icon />;
 
 const faqData = [
   {
@@ -59,14 +61,15 @@ const faqData = [
       "Restez vigilant, documentez tout, et orientez vers des structures spécialisées.",
   },
   {
-    question: "Comment reconnaître les signes de violence ?",
+    question:
+      "Comment préserver la confidentialité dans un environnement hospitalier ?",
     answer:
-      "Les signes peuvent être physiques (blessures, douleurs), psychologiques (anxiété, dépression), ou comportementaux (isolement, changements d'humeur). Notre équipe est formée pour identifier ces signes et apporter une aide adaptée.",
+      "Assurez un espace privé pour les échanges, limitez l’accès au dossier médical.",
   },
   {
-    question: "Quelle est la procédure de prise en charge ?",
+    question: "Quels documents officiels doivent être remplis ?",
     answer:
-      "La prise en charge commence par un accueil confidentiel et bienveillant. Nous effectuons une évaluation complète de la situation, établissons un plan de sécurité et coordonnons les soins médicaux et le soutien psychologique nécessaires.",
+      "Le certificat médical préliminaire est essentiel, ainsi que la documentation dans le dossier médical.",
   },
   {
     question: "La confidentialité est-elle garantie ?",
@@ -74,9 +77,9 @@ const faqData = [
       "Absolument. La confidentialité est au cœur de notre pratique. Toutes les informations partagées sont protégées par le secret professionnel, sauf en cas de danger imminent nécessitant une intervention d'urgence.",
   },
   {
-    question: "Puis-je venir accompagné(e) ?",
+    question: "Où trouver des formations spécifiques ?",
     answer:
-      "Oui, vous pouvez venir accompagné(e) d'une personne de confiance. Nous nous adaptons à vos besoins et à ce qui vous met le plus à l'aise.",
+      "Consultez les institutions de santé publique et associations paramédicales en Tunisie.",
   },
 ];
 
@@ -92,7 +95,9 @@ const FAQ = () => {
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
           >
             {faq.question}
-            <IconComponent icon={FaChevronDown as React.ComponentType<IconBaseProps>} />
+            <IconComponent
+              icon={FaChevronDown as React.ComponentType<IconBaseProps>}
+            />
           </Question>
           <AnimatePresence>
             {openIndex === index && (

@@ -1,8 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import { FaArrowRight } from 'react-icons/fa';
-import type { IconBaseProps } from 'react-icons/lib';
+import React from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import { FaArrowRight } from "react-icons/fa";
+import type { IconBaseProps } from "react-icons/lib";
+import { BulletList, BulletPoint } from "./ClinicAbout";
 
 interface IconComponentProps {
   icon: React.ComponentType<IconBaseProps>;
@@ -67,7 +68,7 @@ const Text = styled.p`
 
 const ImageWrapper = styled(motion.div)`
   position: relative;
-  
+
   @media (max-width: 768px) {
     order: 1;
   }
@@ -142,8 +143,8 @@ const TechSection: React.FC = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Image 
-            src="/images/tech-illustration.svg" 
+          <Image
+            src="/images/play-img.png"
             alt="Technologies Avancées dans les soins"
           />
         </ImageWrapper>
@@ -153,25 +154,37 @@ const TechSection: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Subtitle>Qui sommes-nous</Subtitle>
-            <Title>Nous avons des Technologies Avancées</Title>
-            <Text>
-              Notre équipe utilise les dernières technologies pour offrir des soins de qualité supérieure. 
-              Nous combinons expertise médicale et innovation technologique pour un accompagnement optimal 
-              des patients.
-            </Text>
-            <Text>
-              Grâce à nos outils avancés, nous assurons un suivi personnalisé et une communication 
-              sécurisée, tout en garantissant la confidentialité absolue des informations de nos patients.
-            </Text>
+            <Subtitle>Signes d’alerte à surveiller</Subtitle>
+            <Title>
+              Certains signes doivent attirer l’attention du professionnel :
+            </Title>
+            <BulletList>
+              <BulletPoint>
+                Blessures multiples, répétées ou de formes inhabituelles.
+              </BulletPoint>
+              <BulletPoint>
+                Incohérence entre les blessures et le récit de la patiente.
+              </BulletPoint>
+              <BulletPoint>
+                Comportement anxieux, silence inhabituel, ou présence d’un
+                accompagnant trop intrusif.
+              </BulletPoint>
+              <BulletPoint>
+                Consultations fréquentes sans cause claire.
+              </BulletPoint>
+              <BulletPoint>Historique d’antécédents de violence.</BulletPoint>
+            </BulletList>
+
             <NewsletterForm onSubmit={handleEmailSubmit}>
-              <EmailInput 
-                type="email" 
-                placeholder="Entrez votre email" 
+              <EmailInput
+                type="email"
+                placeholder="Entrez votre email"
                 aria-label="Adresse email"
               />
               <SubmitButton type="submit" aria-label="S'abonner">
-                <IconComponent icon={FaArrowRight as React.ComponentType<IconBaseProps>} />
+                <IconComponent
+                  icon={FaArrowRight as React.ComponentType<IconBaseProps>}
+                />
               </SubmitButton>
             </NewsletterForm>
           </motion.div>

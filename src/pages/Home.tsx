@@ -1,10 +1,5 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
-import {
-  FaUserMd,
-  FaHospital,
-  FaHandHoldingHeart,
-} from "react-icons/fa";
+import { FaUserMd, FaHospital, FaHandHoldingHeart } from "react-icons/fa";
 import Testimonial from "../components/Testimonial";
 import Services from "../components/Services";
 import FAQ from "../components/FAQ";
@@ -27,27 +22,6 @@ const StatsGrid = styled.div`
   margin: 0 auto;
 `;
 
-const FeaturesSection = styled.section`
-  padding: 5rem 2rem;
-  background-color: var(--secondary-color);
-`;
-
-const FeaturesGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-`;
-
-const FeatureCard = styled(motion.div)`
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
-`;
-
 const TestimonialsSection = styled.section`
   padding: 5rem 2rem;
   background-color: white;
@@ -68,7 +42,7 @@ const ServicesSection = styled.section`
 
 const FAQSection = styled.section`
   padding: 5rem 2rem;
-  background: white;
+  background: var(--secondary-color);
 `;
 
 const SectionTitle = styled.h2`
@@ -90,7 +64,6 @@ const Home = () => {
   const handlePlayVideo = () => {
     console.log("Play video clicked");
   };
-
 
   return (
     <>
@@ -123,7 +96,6 @@ const Home = () => {
             label="Personnes Accompagnées"
             delay={0.4}
           />
-  
         </StatsGrid>
       </StatsSection>
 
@@ -151,10 +123,10 @@ const Home = () => {
             rating={5}
           />
           <Testimonial
-            avatar="/images/hero-doctor.png"
+            avatar="/images/hero-amine.png"
             quote="Je suis un professionnel de santé formé et spécialisé dans l’accueil, l’écoute et le soin des femmes ayant subi des violences. Mon rôle est d’assurer une prise en charge globale et adaptée aux besoins de chaque patiente, en garantissant un accompagnement médical, psychologique et social."
             name="Mohamed Amine Ghalmi"
-            role="Infirmière Spécialisée"
+            role="Infirmier Spécialisé"
             rating={4}
           />
         </TestimonialsGrid>
@@ -168,40 +140,6 @@ const Home = () => {
         </SectionSubtitle>
         <FAQ />
       </FAQSection>
-
-      <FeaturesSection>
-        <FeaturesGrid>
-          <FeatureCard
-            whileHover={{ y: -10 }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h3>Identification</h3>
-            <p>Reconnaître les signes de violence et évaluer la situation</p>
-          </FeatureCard>
-          <FeatureCard
-            whileHover={{ y: -10 }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h3>Accompagnement</h3>
-            <p>
-              Soutien psychologique et orientation vers les services adaptés
-            </p>
-          </FeatureCard>
-          <FeatureCard
-            whileHover={{ y: -10 }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <h3>Protection</h3>
-            <p>Mise en place de mesures de protection et suivi personnalisé</p>
-          </FeatureCard>
-        </FeaturesGrid>
-      </FeaturesSection>
     </>
   );
 };

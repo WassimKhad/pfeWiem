@@ -107,13 +107,13 @@ const StatBox = styled(motion.div)`
   }
 `;
 
-const BulletList = styled.ul`
+export const BulletList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 2rem 0;
 `;
 
-const BulletPoint = styled.li`
+export const BulletPoint = styled.li`
   position: relative;
   padding-left: 2rem;
   margin-bottom: 1.2rem;
