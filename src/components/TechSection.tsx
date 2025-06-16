@@ -60,11 +60,7 @@ const Title = styled.h2`
   }
 `;
 
-const Text = styled.p`
-  color: #666;
-  line-height: 1.8;
-  margin-bottom: 2rem;
-`;
+
 
 const ImageWrapper = styled(motion.div)`
   position: relative;
