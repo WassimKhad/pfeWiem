@@ -86,8 +86,8 @@ const Home = () => {
           />
           <StatCard
             icon={FaHospital}
-            value="50+"
-            label="Centres Partenaires"
+            value="20+"
+            label="Centres d'accueil"
             delay={0.2}
           />
           <StatCard
