@@ -210,7 +210,7 @@ const ClinicAbout: React.FC<ClinicAboutProps> = ({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                <h3>215+</h3>
+                <h3>180+</h3>
                 <p>Professionnels</p>
               </StatBox>
               <StatBox
@@ -219,8 +219,8 @@ const ClinicAbout: React.FC<ClinicAboutProps> = ({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
               >
-                <h3>315+</h3>
-                <p>Centres Partenaires</p>
+                <h3>20+</h3>
+                <p>Centres d'acceuil</p>
               </StatBox>
               <StatBox
                 color="#f5f5f5"
@@ -228,8 +228,8 @@ const ClinicAbout: React.FC<ClinicAboutProps> = ({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                <h3>106+</h3>
-                <p>Récompenses</p>
+                <h3>84,7%</h3>
+                <p>Des femmes subissent une forme de violence</p>
               </StatBox>
             </Stats>
           </motion.div>

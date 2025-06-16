@@ -69,7 +69,7 @@ const Footer = () => {
           </ContactInfo>
           <ContactInfo>
             <IconComponent icon={FaPhone as React.ComponentType<IconBaseProps>} />
-            <span>119 (Enfance en danger)</span>
+            <span>00216 71 151 400</span>
           </ContactInfo>
           <ContactInfo>
             <IconComponent icon={FaPhone as React.ComponentType<IconBaseProps>} />
@@ -81,11 +81,11 @@ const Footer = () => {
           <h3>Nous contacter</h3>
           <ContactInfo>
             <IconComponent icon={FaEnvelope as React.ComponentType<IconBaseProps>} />
-            <span>contact@paramed-care.fr</span>
+            <span>charlesnicolle@rns.tn</span>
           </ContactInfo>
           <ContactInfo>
             <IconComponent icon={FaMapMarkerAlt as React.ComponentType<IconBaseProps>} />
-            <span>Tunis, Tunisie</span>
+            <span>Bab Saadoun Tunis, Tunisie</span>
           </ContactInfo>
         </FooterSection>
       </FooterContent>
